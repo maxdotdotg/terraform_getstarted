@@ -9,6 +9,11 @@ resource "aws_instance" "node1" {
     # explicit dependency declaration, just like dependsOn directive
     # from cloudformation
     # terraform cannot resolve this bit by itself, thus the use of depends_on
+
+    provisioner "local_exec" {
+      command = "echo {aws_instance.node1.public_ip} > ip_address.txt"
+    }
+    # provioner blocks only run on creation
 }
 
 resource "aws_eip" "ip" {
