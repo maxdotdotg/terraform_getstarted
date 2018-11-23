@@ -1,2 +1,5 @@
 # ignore .terrafor dir
 .terraform/*
+# ignore terraform.tfstate, as this is going in a public repo
+terraform.tfstate
+terraform.tfstate.backup
