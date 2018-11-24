@@ -5,9 +5,10 @@ provider "aws" {
 resource "aws_instance" "node1" {
     ami             = "ami-b374d5a5"
     instance_type   = "t2.micro"
+    key_name        = "max_tf"
 
     provisioner "local-exec" {
-      command = "echo {aws_instance.node1.public_ip} > ip_address.txt"
+      command = "echo ${aws_instance.node1.public_ip} > ip_address.txt"
     }
     # provioners only executed on resource creation
 }
