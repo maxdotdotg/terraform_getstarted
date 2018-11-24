@@ -19,3 +19,10 @@ resource "aws_eip" "ip" {
     # terraform can resolve this bit by itself
 }
 
+output "ip" {
+  value = "${aws_eip.ip.public_ip}"
+}
+
+output "private_dns" {
+  value = "${aws_instance.node1.private_dns}"
+}
