@@ -7,4 +7,4 @@
 * lifecycle parameter - how to manage resource replacement (ex: `create_before_destroy`)
     when set on a resource, all of its dependant resources must be set the same
     ex: instance uses security group resource and is set to `create_before_destroy = true` --> security group resource must also be set the same
-
+* [data resources](https://www.terraform.io/docs/configuration/data-sources.html) to store metadata, used here to store value for all AZs
