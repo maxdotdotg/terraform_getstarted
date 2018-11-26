@@ -10,3 +10,8 @@ variable "region" {
   default = "us-east-1"
 }
 
+variable "server_port" {
+  description = "port server will use for http requests"
+  default = 8080
+}
+
