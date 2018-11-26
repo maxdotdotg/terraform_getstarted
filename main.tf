@@ -2,12 +2,11 @@ provider "aws" {
     region    = "${var.region}"
 }
 
-module "consul" {
-  source ="hashicorp/consul/aws"
-
-  num_servers = "3"
-}
-
-output "consul_server_asg_name" {
-  value = "${module.consul.asg_name_servers}"
+resource "aws_instance" "example" {
+  ami           = "ami-40d28157"
+  instance_type = "t2.micro"
+  key_name = "${var.key_name}"
+  tags {
+    Name = "terraform-example"
+  }
 }
